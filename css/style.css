@@ -1,0 +1,17 @@
+IMG.bob {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+body {
+    background-image: url('../images/images/background.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: azure;
+    
+    
+}
