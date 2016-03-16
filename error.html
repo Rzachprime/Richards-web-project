@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+        <meta charset="utf-8">
+        <title>Title goes here</title>
+        <link type="text/css" rel="stylesheet" href="css/normailize.css" />
+        <link type="text/css" rel="stylesheet" href="css/entireframework.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/bootstrap-plugin.css" />
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+        
+
+        <script type="text/javascript" href="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js" />
+    <script>
+        angular.module('errorForm',[]);
+    </script>
+    
+    
+    <!-- Begin angular error form application -->
+    
+    <body ng-app class="erbd">
+        <form name:"errorForm" ng-submit="ctrl.submitData()" class="erbd">
+        Name:<br>
+            <input ng-model="name" type="text" class="smooth erbd"/><br>
+        Describe Error:<br> 
+            <textarea ng-model="message" rows="5" class="smooth erbd"></textarea>
+            <input type="submit" value="send message" class="erbd"/>
+        
+        </form>
+        
+        <div class="error">
+            <div>{{ name }}</div>
+            <div>{{ message }}</div>
+        </div>
+    </body>
+
+
+</html>

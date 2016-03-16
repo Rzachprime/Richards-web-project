@@ -1,6 +1,6 @@
 body {
     background-image: url('../images/images/background.jpg');
-    background-size: auto;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center;
     background-color: blue;
