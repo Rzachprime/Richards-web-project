@@ -98,6 +98,7 @@ function pubBio() {
 
 
 //combines fate destiny and karma into a single string as my life story
+// and publishes it to <p> called biog in my about page.
     lifeStory = biographyOne + " " + biographyTwo + " " + biographyThree;
     document.getElementById("biog").innerHTML = lifeStory;
 }
