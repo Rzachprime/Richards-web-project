@@ -19,83 +19,85 @@
         karma = Math.floor((Math.random() * 10) + 1);
         }
 
+//sends string into about.html page as text
+function pubBio() {
+    myFate();
+
 //if else statements for fate
 
     if (fate == 1) {
-        biographyOne = "x";
+        biographyOne = "From the seas";
         } else if (fate == 2){
-        biographyOne = "x";
+        biographyOne = "The cosmos forged";
         } else if (fate == 3){
-        biographyOne = "x";
+        biographyOne = "From a burning";
         } else if (fate == 4){
-        biographyOne = "x";
+        biographyOne = "In a forgotten";
         } else if (fate == 5){
-        biographyOne = "x";
+        biographyOne = "Once upon a rhyme";
         } else if (fate == 6){
-        biographyOne = "x";
+        biographyOne = "From far off lands";
         } else if (fate == 7){
-        biographyOne = "x";
+        biographyOne = "Across the sky";
         } else if (fate == 8){
-        biographyOne = "x";
+        biographyOne = "From the pit";
         } else if (fate == 9){
-        biographyOne = "x";
+        biographyOne = "The story of";
         } else {
-        biographyOne = "x";
+        biographyOne = "A well crafted";
     }
 
 
 //if else statements for destiny
 
     if (destiny == 1) {
-        biographyTwo = "x";
+        biographyTwo = "meteor";
     } else if (destiny == 2){
-        biographyTwo = "x";
+        biographyTwo = "swarm";
     } else if (destiny == 3){
-        biographyTwo = "x";
+        biographyTwo = "shark";
     } else if (destiny == 4){
-        biographyTwo = "x";
+        biographyTwo = "octopi";
     } else if (destiny == 5){
-        biographyTwo = "x";
+        biographyTwo = "mouse";
     } else if (destiny == 6){
-        biographyTwo = "x";
+        biographyTwo = "table";
     } else if (destiny == 7){
-        biographyTwo = "x";
+        biographyTwo = "dinosaur";
     } else if (destiny == 8){
-        biographyTwo = "x";
+        biographyTwo = "robot";
     } else if (destiny == 9){
-        biographyTwo = "x";
+        biographyTwo = "cult";
     } else {
-        biographyTwo = "x";
+        biographyTwo = "wizard";
     }
 
 //if else statements for karma
 
     if (karma == 1) {
-        biographyThree = "x";
+        biographyThree = "made me.";
     } else if (karma == 2) {
-        biographyThree = "x";
+        biographyThree = "enlightened me.";
     } else if (karma == 3) {
-        biographyThree = "x";
+        biographyThree = "laughed at me.";
     } else if (karma == 4) {
-        biographyThree = "x";
+        biographyThree = "wasn't me.";
     } else if (karma == 5) {
-        biographyThree = "x";
+        biographyThree = "found me.";
     } else if (karma == 6) {
-        biographyThree = "x";
+        biographyThree = "partied with me.";
     } else if (karma == 7) {
-        biographyThree = "x";
+        biographyThree = "mocked me.";
     } else if (karma == 8) {
-        biographyThree = "x";
+        biographyThree = "greeted me.";
     } else if (karma == 9) {
-        biographyThree = "x";
+        biographyThree = "ignored me.";
     } else {
-        biographyThree = "x";
+        biographyThree = "liked me.";
     }
 
 
 //combines fate destiny and karma into a single string as my life story
-
-lifeStory = biographyOne + " " + biographyTwo + " " + biographyThree;
-
-
-//sends string into about.html page as text
+    lifeStory = biographyOne + " " + biographyTwo + " " + biographyThree;
+    document.getElementById("biog").innerHTML = lifeStory;
+}
