@@ -1,17 +1,22 @@
 "use strict";
 
 // variables to hold the dice results
+
     var fate;
     var destiny;
     var karma;
+
 // variables to hold the text of my life story
+
     var biographyOne;
     var biographyTwo;
     var biographyThree;
-// variable to hold life story
+
+// variable to hold life story.. It holds the final string that will be displayed on the page.
+
     var lifeStory;
 
-// random number generators for dice
+// random number generators to act as dice. They fill the fate, destiny, and karma vars...
 
     function myFate() {
         fate = Math.floor((Math.random() * 10) + 1);
@@ -19,7 +24,9 @@
         karma = Math.floor((Math.random() * 10) + 1);
         }
 
-//sends string into about.html page as text
+// sends string into about.html page as text
+// cycles through if else if statements to create a random story...
+
 function pubBio() {
     myFate();
 
@@ -99,6 +106,7 @@ function pubBio() {
 
 //combines fate destiny and karma into a single string as my life story
 // and publishes it to <p> called biog in my about page.
+    
     lifeStory = biographyOne + " " + biographyTwo + " " + biographyThree;
     document.getElementById("biog").innerHTML = lifeStory;
 }
