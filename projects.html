@@ -91,14 +91,27 @@
             <p> Step 4: Type the latitude and longitude in the coordinates text box</p>
             <p> Step 5: Click the submit button to find out is you are close</p>
             <p> Step 6: If you are within .5 miles of the target you win. If not you lose.</p>
+       
+                <button class="button-xlarge pure-button pure-button-active" onclick="returnTarget()">PLAY!</button>
+           
+            <br></br>
+                <p>TARGET</p>
+                <!--<p id="target" position="center"></p>-->
+                <input id="target2" class="textbox" type="text" style="color:black;"> 
+                <br><br>
+                <p>COORDINATES</p>
+           
+                <input id="latitude" type="text" class="pure-input-rounded" placeholder="Latitude" style="color:black;">
+                <input id="longitude" type="text" class="pure-input-rounded" placeholder="Longitude" style="color:black;">
             
-            <button class="button-xlarge pure-button pure-button-active">PLAY!</button>
-            <p>COORDINATES</p>
-            <input id="latitude" type="text" class="pure-input-rounded" placeholder="Latitude">
-            <input id="longitude" type="text" class="pure-input-rounded" placeholder="Longitude">
-            <button class="button-xlarge pure-button pure-button-active">Submit!</button>
-            <p id="results"></p>
-            
+            <br></br>
+           
+                <button class="button-xlarge pure-button pure-button-active" onclick="initMap()">Submit!</button>
+           
+                <br></br>
+                <!--<p id="results" position="center"></p>-->
+                <input id="results" class="textbox" type="text" style="color:black;" rows="3"> 
+                <br><br>
             <div id="map"></div>
             <script src="js/map.js"></script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxLQGXZ3fW0M1I50wNaJehGr6TdYsDwts&libraries=places"></script>

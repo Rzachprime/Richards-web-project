@@ -33,3 +33,16 @@ body {
     height: 500px;
     background-color: #ccc;
 }
+
+ 
+.textbox { 
+    border: 1px solid #848484; 
+    -webkit-border-radius: 30px; 
+    -moz-border-radius: 30px; 
+    border-radius: 30px; 
+    outline:0; 
+    height:75px; 
+    width: 475px; 
+    padding-left:10px; 
+    padding-right:10px; 
+  } 

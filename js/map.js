@@ -1,7 +1,7 @@
 "use strict";
 
 
-// function to initialize google maps object
+/* function to initialize google maps object
 
 function initMap(){
     var mapDiv = document.getElementById('map');
@@ -10,123 +10,147 @@ function initMap(){
           zoom: 15
         });
     
-}
+} */
 
 // Var to hold information from text boxes
 
+var value1 = document.getElementById("latitude").value;
+var value2 = document.getElementById("longitude").value;
+
+var target1;
 
 
+//var to hold random numbers for dice mechanics. Generates a number range of 1 through 10
+var dice1;
 
+function diceFate () {
+    dice1 = Math.floor((Math.random()*10)+1);
+}
+// Var to hold target information
 
+// Function to generate target
 
+function returnTarget() {
+    diceFate ();
 
-
-// Function to call return result for game
-
-
+    if (dice1 == 1) {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 1";
+    } else if (dice1 == 2) {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 2";
+    } else if (dice1 == 3) {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 3";
+    } else if (dice1 == 4) {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 4";
+    } else if (dice1 == 5) {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 5";
+    } else if (dice1 == 6) {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 6";
+    } else if (dice1 == 7) {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 7";
+    } else if (dice1 == 8) {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 8";
+    } else if (dice1 == 9) {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 9";
+    } else {
+        target1 = "";
+        document.getElementById("target2").innerHTML = "Paragraph changed! 10";
+        
+    }
+    
+    
+    
+};
 
 
 
 
 // Function to send values to map 
 
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+
+// Function to display map and generate the distance result
 
 function initMap() {
-  var origin_place_id = null;
-  var destination_place_id = null;
-  var travel_mode = google.maps.TravelMode.WALKING;
+  var bounds = new google.maps.LatLngBounds;
+  var markersArray = [];
+
+  var origin1 = {lat: 55.93, lng: -3.118};
+  var origin2 = 'Greenwich, England';
+  var destinationA = 'Stockholm, Sweden';
+  var destinationB = {lat: 50.087, lng: 14.421};
+
+  var destinationIcon = 'https://chart.googleapis.com/chart?' +
+      'chst=d_map_pin_letter&chld=D|FF0000|000000';
+  var originIcon = 'https://chart.googleapis.com/chart?' +
+      'chst=d_map_pin_letter&chld=O|FFFF00|000000';
   var map = new google.maps.Map(document.getElementById('map'), {
-    mapTypeControl: false,
-    center: {lat: -35.2500, lng: 85.7667},
+    center: {lat: 38.2500, lng: -85.7667},
     zoom: 15
   });
-  var directionsService = new google.maps.DirectionsService;
-  var directionsDisplay = new google.maps.DirectionsRenderer;
-  directionsDisplay.setMap(map);
+  var geocoder = new google.maps.Geocoder;
 
-  var origin_input = document.getElementById('origin-input');
-  var destination_input = document.getElementById('destination-input');
-  var modes = document.getElementById('mode-selector');
-
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(origin_input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(destination_input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(modes);
-
-  var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
-  origin_autocomplete.bindTo('bounds', map);
-  var destination_autocomplete =
-      new google.maps.places.Autocomplete(destination_input);
-  destination_autocomplete.bindTo('bounds', map);
-
-  // Sets a listener on a radio button to change the filter type on Places
-  // Autocomplete.
-  function setupClickListener(id, mode) {
-    var radioButton = document.getElementById(id);
-    radioButton.addEventListener('click', function() {
-      travel_mode = mode;
-    });
-  }
-  setupClickListener('changemode-walking', google.maps.TravelMode.WALKING);
-  setupClickListener('changemode-transit', google.maps.TravelMode.TRANSIT);
-  setupClickListener('changemode-driving', google.maps.TravelMode.DRIVING);
-
-  function expandViewportToFitPlace(map, place) {
-    if (place.geometry.viewport) {
-      map.fitBounds(place.geometry.viewport);
+  var service = new google.maps.DistanceMatrixService;
+  service.getDistanceMatrix({
+    origins: [origin1, origin2],
+    destinations: [destinationA, destinationB],
+    travelMode: google.maps.TravelMode.DRIVING,
+    unitSystem: google.maps.UnitSystem.IMPERIAL,
+    avoidHighways: false,
+    avoidTolls: false
+  }, function(response, status) {
+    if (status !== google.maps.DistanceMatrixStatus.OK) {
+      alert('Error was: ' + status);
     } else {
-      map.setCenter(place.geometry.location);
-      map.setZoom(17);
-    }
-  }
+      var originList = response.originAddresses;
+      var destinationList = response.destinationAddresses;
+      var outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = '';
+      deleteMarkers(markersArray);
 
-  origin_autocomplete.addListener('place_changed', function() {
-    var place = origin_autocomplete.getPlace();
-    if (!place.geometry) {
-      window.alert("Autocomplete's returned place contains no geometry");
-      return;
-    }
-    expandViewportToFitPlace(map, place);
+      var showGeocodedAddressOnMap = function(asDestination) {
+        var icon = asDestination ? destinationIcon : originIcon;
+        return function(results, status) {
+          if (status === google.maps.GeocoderStatus.OK) {
+            map.fitBounds(bounds.extend(results[0].geometry.location));
+            markersArray.push(new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location,
+              icon: icon
+            }));
+          } else {
+            alert('Geocode was not successful due to: ' + status);
+          }
+        };
+      };
 
-    // If the place has a geometry, store its place ID and route if we have
-    // the other place ID
-    origin_place_id = place.place_id;
-    route(origin_place_id, destination_place_id, travel_mode,
-          directionsService, directionsDisplay);
-  });
-
-  destination_autocomplete.addListener('place_changed', function() {
-    var place = destination_autocomplete.getPlace();
-    if (!place.geometry) {
-      window.alert("Autocomplete's returned place contains no geometry");
-      return;
-    }
-    expandViewportToFitPlace(map, place);
-
-    // If the place has a geometry, store its place ID and route if we have
-    // the other place ID
-    destination_place_id = place.place_id;
-    route(origin_place_id, destination_place_id, travel_mode,
-          directionsService, directionsDisplay);
-  });
-
-  function route(origin_place_id, destination_place_id, travel_mode,
-                 directionsService, directionsDisplay) {
-    if (!origin_place_id || !destination_place_id) {
-      return;
-    }
-    directionsService.route({
-      origin: {'placeId': origin_place_id},
-      destination: {'placeId': destination_place_id},
-      travelMode: travel_mode
-    }, function(response, status) {
-      if (status === google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-      } else {
-        window.alert('Directions request failed due to ' + status);
+      for (var i = 0; i < originList.length; i++) {
+        var results = response.rows[i].elements;
+        geocoder.geocode({'address': originList[i]},
+            showGeocodedAddressOnMap(false));
+        for (var j = 0; j < results.length; j++) {
+          geocoder.geocode({'address': destinationList[j]},
+              showGeocodedAddressOnMap(true));
+          outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
+              ': ' + results[j].distance.text + ' in ' +
+              results[j].duration.text + '<br>';
+        }
       }
-    });
+    }
+  });
+}
+
+function deleteMarkers(markersArray) {
+  for (var i = 0; i < markersArray.length; i++) {
+    markersArray[i].setMap(null);
   }
+  markersArray = [];
 }
