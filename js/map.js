@@ -40,45 +40,45 @@ function returnTarget() {
     
 
     if (dice1 == 1) {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 1";
+        target1 = "37.8199";
+        target3 = "-122.4783";
+        document.getElementById("target2").innerHTML = "The target has decided to visit The Golden Gate Bridge in San Francisco.";
     } else if (dice1 == 2) {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 2";
+        target1 = "28.3852";
+        target3 = "-81.5639";
+        document.getElementById("target2").innerHTML = "The target is visiting Walt Disney World in Orlando.";
     } else if (dice1 == 3) {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 3";
+        target1 = "40.7829";
+        target3 = "-73.9654";
+        document.getElementById("target2").innerHTML = "The target can be found in Central Park in New York City.";
     } else if (dice1 == 4) {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 4";
+        target1 = "40.6892";
+        target3 = "-74.0445";
+        document.getElementById("target2").innerHTML = "The target is near the Statue of Liberty on Liberty Island.";
     } else if (dice1 == 5) {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 5";
+        target1 = "44.4280";
+        target3 = "-110.5885";
+        document.getElementById("target2").innerHTML = "The target is located in Yellowstone National Park.";
     } else if (dice1 == 6) {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 6";
+        target1 = "38.8895";
+        target3 = "-77.0353";
+        document.getElementById("target2").innerHTML = "The target is near the Washington Monument in Washington D.C.";
     } else if (dice1 == 7) {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 7";
+        target1 = "48.8791";
+        target3 = "-103.4591";
+        document.getElementById("target2").innerHTML = "The target is located near Mount Rushmore National Memorial in South Dakota.";
     } else if (dice1 == 8) {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 8";
+        target1 = "38.2572";
+        target3 = "-85.7540";
+        document.getElementById("target2").innerHTML = "The target is at KFC Yum! Center in Louisville.";
     } else if (dice1 == 9) {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 9";
+        target1 = "36.1162";
+        target3 = "-115.1745";
+        document.getElementById("target2").innerHTML = "The target is at Caesers Palace in Las Vegas.";
     } else {
-        target1 = "38.0297";
-        target3 = "-84.4947";
-        document.getElementById("target2").innerHTML = "Paragraph changed! 10";
+        target1 = "38.6247";
+        target3 = "-90.1848";
+        document.getElementById("target2").innerHTML = "The target is near the Gateway Arch in St. Louis.";
         
     }
     

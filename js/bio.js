@@ -33,74 +33,74 @@ function pubBio() {
 //if else statements for fate
 
     if (fate == 1) {
-        biographyOne = "From the seas";
+        biographyOne = "I grew up in the state of Florida for most of my early life.";
         } else if (fate == 2){
-        biographyOne = "The cosmos forged";
+        biographyOne = "I have lived in Florida, Georgia, Alabama, Kentucky, and Iowa.";
         } else if (fate == 3){
-        biographyOne = "From a burning";
+        biographyOne = "I wanted to be an astronaut when I was a child.";
         } else if (fate == 4){
-        biographyOne = "In a forgotten";
+        biographyOne = "I moved to Kentucky in 2007.";
         } else if (fate == 5){
-        biographyOne = "Once upon a rhyme";
+        biographyOne = "I have lived in Louisville since 2009.";
         } else if (fate == 6){
-        biographyOne = "From far off lands";
+        biographyOne = "I have always like computers.";
         } else if (fate == 7){
-        biographyOne = "Across the sky";
+        biographyOne = "I enjoyed playing games as a child.";
         } else if (fate == 8){
-        biographyOne = "From the pit";
+        biographyOne = "I have always been fascinated by technology.";
         } else if (fate == 9){
-        biographyOne = "The story of";
+        biographyOne = "I was a voracious reader as a child.";
         } else {
-        biographyOne = "A well crafted";
+        biographyOne = "When I was young I wanted to create Voltron.";
     }
 
 
 //if else statements for destiny
 
     if (destiny == 1) {
-        biographyTwo = "meteor";
+        biographyTwo = "I became interested in game design as a teenager. I like to figure out hidden design decisions in games and also come up with my own game ideas.";
     } else if (destiny == 2){
-        biographyTwo = "swarm";
+        biographyTwo = "I love to read. I began reading as a child and I haven’t stopped reading daily since then.";
     } else if (destiny == 3){
-        biographyTwo = "shark";
+        biographyTwo = "I like to build my own computers. It saves money and you can make your pc look amazing as well.";
     } else if (destiny == 4){
-        biographyTwo = "octopi";
+        biographyTwo = "I really like Javascript. Between HTML, CSS, and Javascript I choose Javascript as my favorite language.";
     } else if (destiny == 5){
-        biographyTwo = "mouse";
+        biographyTwo = "My favorite philosophical book is “The Tao of Pooh”.";
     } else if (destiny == 6){
-        biographyTwo = "table";
+        biographyTwo = "I enjoy playing games like Magic: the gathering, Dominion, and Ascension.";
     } else if (destiny == 7){
-        biographyTwo = "dinosaur";
+        biographyTwo = "I really like motorcycles. Japanese and European racing bikes are simply amazing machines.";
     } else if (destiny == 8){
-        biographyTwo = "robot";
+        biographyTwo = "I like science fiction and fantasy shows most of the time. The Flash is my current favorite tv show.";
     } else if (destiny == 9){
-        biographyTwo = "cult";
+        biographyTwo = "I am fascinated by history. I feel that an understanding of our history is vital to understanding where we are going.";
     } else {
-        biographyTwo = "wizard";
+        biographyTwo = "I enjoy leaning about science and technology. I find books like “Our Mathematical Universe” to be very fun to read.";
     }
 
 //if else statements for karma
 
     if (karma == 1) {
-        biographyThree = "made me.";
+        biographyThree = "In the future I want to focus on improving my coding skills and getting a career as web developer.";
     } else if (karma == 2) {
-        biographyThree = "enlightened me.";
+        biographyThree = "I would like to get certified as a .net developer at some point.";
     } else if (karma == 3) {
-        biographyThree = "laughed at me.";
+        biographyThree = "I want to get my motorcycle license in the near future and begin learning to drive motorcycles.";
     } else if (karma == 4) {
-        biographyThree = "wasn't me.";
+        biographyThree = "I want to travel the world. I want to visit Italy, England, Japan, China, and Germany.";
     } else if (karma == 5) {
-        biographyThree = "found me.";
+        biographyThree = "I would like to see all 50 states in my lifetime.";
     } else if (karma == 6) {
-        biographyThree = "partied with me.";
+        biographyThree = "I would like to visit the original Comic-Con in California.";
     } else if (karma == 7) {
-        biographyThree = "mocked me.";
+        biographyThree = "I am interested in publishing a paper and pencil role playing game I designed.";
     } else if (karma == 8) {
-        biographyThree = "greeted me.";
+        biographyThree = "I would like to visit Las Vegas and see all of the Cirque Du Soleil shows that are only shown there.";
     } else if (karma == 9) {
-        biographyThree = "ignored me.";
+        biographyThree = "I want to visit New York and walk around the city.";
     } else {
-        biographyThree = "liked me.";
+        biographyThree = "I plan on eventually buying a house although I haven’t decided where I would like that house to be yet.";
     }
 
 

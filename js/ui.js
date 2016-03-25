@@ -1,3 +1,5 @@
+//a small javascript file required to use side menu in purecss.
+
 (function (window, document) {
 
     var layout   = document.getElementById('layout'),
