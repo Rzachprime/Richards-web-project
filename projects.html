@@ -13,7 +13,8 @@
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 <link rel="stylesheet" href="css/normailize.css">
 <link rel="stylesheet" href="css/style.css">
-
+<script src="angular/angular.js"></script>
+<script src="js/app.js"></script>
 
 
 
@@ -35,7 +36,7 @@
     
 
 </head>
-<body>
+<body ng-app="">
 
 
 
@@ -75,9 +76,9 @@
         </div>
 
         <div class="content">
-            <h2 class="content-subhead">Instructions video</h2>
-            <p>
-                Replace with video instructions
+            <h2 class="content-subhead">About this Page</h2>
+            <p>This page contains some of my experiments in coding. 
+                
             </p>
 
             <h2 class="content-subhead">Google Maps Game</h2>
@@ -129,13 +130,23 @@
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxLQGXZ3fW0M1I50wNaJehGr6TdYsDwts&libraries=places"></script>
             
 
-            <h2 class="content-subhead">Future Projects</h2>
+            <h2 class="content-subhead">Video Project</h2>
             <p>
-               I plan on adding other projects here. I plan on using this place as a showcase of my progressing skills in web develpment. 
+               I have a free video from Pixabay displayed here. The video is actually in another html page that is not linked to the navigation menu. Using angular I am running that pages html code inside of the content div beneath this paragraph. 
             </p>
         </div>
-    </div>
-</div>
+        
+                <div class="content3" ng-include="'video.html'"></div>
+        <div class="content">
+            <h2 class="content-subhead">Future Projects</h2>
+                <p>
+                   I plan on adding other projects here. I plan on using this place as a showcase of my progressing skills in web develpment. 
+                </p>
+        </div>
+        
+        </div>
+    
+    
 
 
 

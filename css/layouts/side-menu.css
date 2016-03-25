@@ -45,7 +45,7 @@ The content `<div>` is where all your content goes.
     margin-bottom: 50px;
     line-height: 1.6em;
 }
-
+ /* added content2 class styling */
 .content2 {
     margin: 0 auto;
     padding: 0 2em;
@@ -53,6 +53,16 @@ The content `<div>` is where all your content goes.
     margin-bottom: 50px;
     line-height: 1.6em;
     position: center;
+}
+
+.content3 {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 75%;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+    position: auto;
+ 
 }
 
 .header {

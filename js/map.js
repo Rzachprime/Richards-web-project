@@ -93,16 +93,6 @@ function returnTarget() {
 
 // Function to send values to map and generate the result
 function finalResult() {
-    //value3 = "lat: " + value1 + ", lng: " + value2 + ";";
-    
-//    value1 = (isNumber(value1) ? 0 : value1);
-//    value2 = (isNumber(value2) ? 0 : value2);
-//    
-//    value1 = latRange(value1);
-//    value2 = lngRange(value2);
-//    
-//    document.getElementById("latitude").value = value1;
-//    document.getElementById("longitude").value = value2;
     
    value1 = document.getElementById("latitude").value;
    value2 = document.getElementById("longitude").value;
@@ -116,17 +106,6 @@ function finalResult() {
     
 }
 
-//function isNumber(n) {
-//    return !isNaN(parseFloat(n)) && isFinite(n);
-//}
-//
-//function latRange(n) {
-//    return Math.min(Math.max(parseInt(n), -90), 90);
-//}
-//
-//function lngRange(n) {
-//    return Math.min(Math.max(parseInt(n), -180), 180);
-//}
 
 
 // Function to display map and generate the distance result
@@ -136,21 +115,28 @@ function initMap() {
   var markersArray = [];
 
   var origin1 = new google.maps.LatLng(value1, value2);
-  // var origin2 = 'Greenwich, England';
+  
   var destinationA = new google.maps.LatLng(target1, target3);
-  // var destinationB = {lat: 50.087, lng: 14.421};
-
+  
+// sets the icons to place on the map 
   var destinationIcon = 'https://chart.googleapis.com/chart?' +
       'chst=d_map_pin_letter&chld=D|FF0000|000000';
   var originIcon = 'https://chart.googleapis.com/chart?' +
       'chst=d_map_pin_letter&chld=O|FFFF00|000000';
+    
+    // New map object centered on louisville ky
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 38.2500, lng: -85.7667},
     zoom: 15
   });
+    
+    // enable the geocoder for information about locations
   var geocoder = new google.maps.Geocoder;
-
+    
+ // enable the distance matrix service for telling distance between locations
   var service = new google.maps.DistanceMatrixService;
+    
+    //retrieves distance matrix info about target
   service.getDistanceMatrix({
     origins: [origin1],
     destinations: [destinationA],
@@ -167,7 +153,8 @@ function initMap() {
        var outputDiv = document.getElementById('output');
       outputDiv.innerHTML = '';
       deleteMarkers(markersArray);
-
+        
+//places the markers on the map
       var showGeocodedAddressOnMap = function(asDestination) {
         var icon = asDestination ? destinationIcon : originIcon;
         return function(results, status) {
@@ -183,7 +170,9 @@ function initMap() {
           }
         };
       };
-
+        
+        
+// creates textstring and outputs it to webpage as text
       for (var i = 0; i < originList.length; i++) {
         var results = response.rows[i].elements;
         geocoder.geocode({'address': originList[i]},
@@ -194,6 +183,9 @@ function initMap() {
            outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
               ': ' + results[j].distance.text + ' in ' +
               results[j].duration.text + '<br>';
+            
+            
+//stores distance text value in value3 var so it can be used in other code 
             value3 = results[j].distance.text;
         }
           
@@ -209,7 +201,7 @@ function initMap() {
       
   });
 }
-
+// takes distance data and determines if player won or not. It then displays the html on the webpage. 
 function winLose() {
           var results1 = value3;
           var results2 = parseInt(results1);
@@ -222,7 +214,7 @@ function winLose() {
           }
 }
     
-    
+  //clears markers from screen  
 
 function deleteMarkers(markersArray) {
   for (var i = 0; i < markersArray.length; i++) {
